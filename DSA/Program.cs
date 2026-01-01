@@ -7,7 +7,13 @@ namespace DSA
         {
             //Arrays
             // Two Sum Brute Force -- leetcode 1
-            var result = Arrays.TwoSumB(new int[] { 12, 2 }, 9);
+
+            /*var result = Arrays.TwoSumB(new int[] { 12, 2 }, 9);
+            */
+
+            // Two Sum Optimized -- leetcode 1
+            var result = Arrays.TwoSum(new int[] { 1, 1, 1, 1, 1, 4, 1, 1, 1, 1, 1, 7, 1, 1, 1, 1, 1 }, 11);
+
             PrintAny(result);
         }
         static void PrintAny(object? result)

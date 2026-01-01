@@ -8,7 +8,9 @@ namespace DSA.Problems.arrays
 {
     static class Arrays
     {
-        // arrays - two sum
+        // ARRAYS - TWO SUM - leetcode 1 - https://leetcode.com/problems/two-sum/
+
+        //  BRUTE FORCE
         static public int[] TwoSumB(int[] nums, int target)
         {
             int last_index = nums.Length - 1;
@@ -26,6 +28,27 @@ namespace DSA.Problems.arrays
                 fast = slow + 2;
             }
 
+            return new[] { -1, -1 };
+        }
+        //Time Complexity = O(n²)
+        //Space Complexity = O(1)
+
+        // OPTIMIZED - using dictionary
+        static public int[] TwoSum(int[] nums, int target)
+        {
+            Dictionary<int, int> pastValues = new Dictionary<int, int>();
+            for (int i = 0; i < nums.Length; i++)
+            {
+                int defference = target - nums[i];
+                if (pastValues.ContainsKey(defference))
+                {
+                    return new[] { i, pastValues[defference] };
+                }
+                else
+                {
+                    pastValues[nums[i] ] = i ;
+                }
+            }
             return new[] { -1, -1 };
         }
     }
