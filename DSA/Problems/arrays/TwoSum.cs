@@ -52,5 +52,76 @@ namespace DSA.Problems.arrays
             return new[] { -1, -1 };
         }
         //Time = O(n), Space = O(n)
+
+        // BEST TIME TO BUY AND SELL STOCK - leetcode 121 - https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
+
+        // BRUTE FORCE
+        static public int MaxProfitB(int[] prices)
+        {
+            int maxProfit = 0;
+            if (prices.Length == 1) return maxProfit;
+            int i = 0;
+            int j = 1;
+            for (; i < prices.Length; i++)
+            {
+                for (; j < prices.Length; j++)
+                {
+                    int tempMax = prices[j] - prices[i];
+                    if (tempMax > maxProfit)
+                    {
+                        maxProfit = tempMax;
+                    }
+                }
+                j = i + 2;
+            }
+
+            return maxProfit;
+        }
+        //Time Complexity = O(n²)
+        //Space Complexity = O(1)
+
+        // BESt TIME TO BUY AND SELL STOCK - OPTIMIZED
+        static public int MaxProfit(int[] prices)
+        {
+            int minPrice = int.MaxValue;
+            int maxProfit = 0;
+            for (int i = 0; i < prices.Length; i++)
+            {
+                if (prices[i] < minPrice)
+                {
+                    minPrice = prices[i];
+                }
+                else if (prices[i] - minPrice > maxProfit)
+                {
+                    maxProfit = prices[i] - minPrice;
+                }
+            }
+            return maxProfit;
+        }
+
+
+        // BEST TIME TO BUY AND SELL STOCK 2 - leetcode 122 - https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/
+        static public int MaxProfit2(int[] prices)
+        {
+            int MaxProfit = 0;
+            int tempMax = 0;
+            int i = 0;
+            int j = 1;
+            for (; i < prices.Length; i++)
+            {
+                for (; j < prices.Length; j++)
+                {
+                    if (prices[i] < prices[j])
+                    {
+                        tempMax = Math.Max(tempMax, prices[j] - prices[i]);
+                    }
+                }
+                MaxProfit = MaxProfit + tempMax;
+                tempMax = 0;
+                j = i + 2;
+            }
+            return MaxProfit;
+        }
+
     }
 }

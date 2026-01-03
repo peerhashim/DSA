@@ -8,12 +8,24 @@ namespace DSA
             //Arrays
             // Two Sum Brute Force -- leetcode 1
 
-            /*var result = Arrays.TwoSumB(new int[] { 12, 2 }, 9);
-            */
+            //var result = Arrays.TwoSumB(new int[] { 12, 2 }, 9);
+
 
             // Two Sum Optimized -- leetcode 1
-            var result = Arrays.TwoSum(new int[] { 1, 1, 1, 1, 1, 4, 1, 1, 1, 1, 1, 7, 1, 1, 1, 1, 1 }, 11);
+            //var result = Arrays.TwoSum(new int[] { 1, 1, 1, 1, 1, 4, 1, 1, 1, 1, 1, 7, 1, 1, 1, 1, 1 }, 11);
 
+            // Best Time to Buy and Sell Stock -- leetcode 121
+            // var result = Arrays.MaxProfitB(new int[] { 7, 1});
+
+            // Optimized Best Time to Buy and Sell Stock -- leetcode 121
+           var result = Arrays.MaxProfit(new int[] { 7, 1, 5, 3, 6, 4 });
+
+            // Best Time to Buy and Sell Stock 2 -- leetcode 122
+            //  var result = Arrays.MaxProfit2(new int[] { 7, 1, 5, 3, 6, 4 });
+
+
+
+            // Print result
             PrintAny(result);
         }
         static void PrintAny(object? result)
