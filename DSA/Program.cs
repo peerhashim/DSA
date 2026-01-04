@@ -18,10 +18,10 @@ namespace DSA
             // var result = Arrays.MaxProfitB(new int[] { 7, 1});
 
             // Optimized Best Time to Buy and Sell Stock -- leetcode 121
-           var result = Arrays.MaxProfit(new int[] { 7, 1, 5, 3, 6, 4 });
+         //  var result = Arrays.MaxProfit(new int[] { 2,100,7, 1, 5, 3, 6, 4 });
 
             // Best Time to Buy and Sell Stock 2 -- leetcode 122
-            //  var result = Arrays.MaxProfit2(new int[] { 7, 1, 5, 3, 6, 4 });
+              var result = Arrays.MaxProfit2(new int[] { 7, 1, 5, 3, 6, 4 });
 
 
 

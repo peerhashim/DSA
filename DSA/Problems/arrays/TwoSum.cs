@@ -103,24 +103,22 @@ namespace DSA.Problems.arrays
         // BEST TIME TO BUY AND SELL STOCK 2 - leetcode 122 - https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/
         static public int MaxProfit2(int[] prices)
         {
-            int MaxProfit = 0;
-            int tempMax = 0;
-            int i = 0;
-            int j = 1;
-            for (; i < prices.Length; i++)
+            int maxProfit = 0;
+            int minPrice = int.MaxValue;
+            for (int i = 0; i < prices.Length; i++)
             {
-                for (; j < prices.Length; j++)
+                if (prices[i] < minPrice)
                 {
-                    if (prices[i] < prices[j])
-                    {
-                        tempMax = Math.Max(tempMax, prices[j] - prices[i]);
-                    }
+                    minPrice = prices[i];
                 }
-                MaxProfit = MaxProfit + tempMax;
-                tempMax = 0;
-                j = i + 2;
+                else
+                {
+                    maxProfit = maxProfit + (prices[i] - minPrice);
+                    minPrice = prices[i];
+                }
             }
-            return MaxProfit;
+            return maxProfit;
+
         }
 
     }
